@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'model/book.dart';
+import 'model/details.dart';
 
 void main() => runApp(new BooksApp());
 
@@ -229,7 +230,10 @@ class ShowBooks extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => Details(bookObject)));
+      },
       child: Row(
         children: <Widget>[
           Column(
